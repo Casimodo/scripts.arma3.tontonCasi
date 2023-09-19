@@ -1,0 +1,1 @@
+#include "Panneau\dialogs.cpp"
