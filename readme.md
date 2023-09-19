@@ -45,7 +45,7 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 ## Les Modules
 
 ### Peche
-- Version : 1.0
+- Version : 1.1
 - Status : OK
 - Description : Prenez une canne à pêche className dans le fichier de config et mettez vous au dessus de l'eau et appuyez sur votre touche d'action les items poissons sont référencé dans le fichier de config.
 
