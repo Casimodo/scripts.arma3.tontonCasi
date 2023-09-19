@@ -1,13 +1,13 @@
 /*
-	    Author: tontonCasi
-    Web site: https// www.tontonCasi.com
-	    file : fn_pecheActions.sqf
-	
-	    Terms of use:
-	      - This file is forbidden unless you have permission from the author. if you have this file without permission to use it please do not use it and do not share it.
-	      - if you have permission to use this file, you can use it on your server however it is strictly forbidden to share it.
-	      - Out of respect for the author please do not delete this information.
-	
+    Author: tontonCasi [Steam UID: https// steamcommunity.com/id/Casimodo33/]
+    Twitch : https://www.twitch.tv/tontoncasi
+    file : fn_pecheActions.sqf
+
+    Terms of use:
+      - This file is forbidden unless you have permission from the author. If you have this file without permission to use it please do not use it and do not share it.
+      - If you have permission to use this file, you can use it on your server however it is strictly forbidden to share it.
+      - Out of respect for the author please do not delete this information.
+
 	    Example:
 	    call{
 		[this] call c33_fnc_pecheActions;

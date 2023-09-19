@@ -9,29 +9,3 @@
       - Out of respect for the author please do not delete this information.
 
 */
-
-#define true 1
-#define false 0
-
-class tontonCasi_Panneau { 
-
-    licence = "licence_civ_news";  // licence modification de panneau
-
-    class textureList {
-        
-        class bienvenu {
-            label   = "Bienvenu";
-            picture = "pan_bienvenu.paa";
-        };
-        
-        class numbersIle {
-            label   = "Numeros Ile";
-            picture = "pan_num.paa";
-        };
-        
-        class infoGarage {
-            label   = "Info. Garage";
-            picture = "pan_garage.paa";
-        };
-    };
-};  

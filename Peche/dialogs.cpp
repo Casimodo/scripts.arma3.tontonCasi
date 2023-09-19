@@ -9,4 +9,3 @@
       - Out of respect for the author please do not delete this information.
 
 */
-#include "config_master.cpp"

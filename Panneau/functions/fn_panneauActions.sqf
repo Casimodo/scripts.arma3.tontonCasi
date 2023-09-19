@@ -1,6 +1,6 @@
 /*
-    Author: tontonCasi
-    Web site: https://www.tontonCasi.com
+    Author: tontonCasi [Steam UID: https// steamcommunity.com/id/Casimodo33/]
+    Twitch : https://www.twitch.tv/tontoncasi
     file : fn_panneauActions.sqf
 
     Terms of use:

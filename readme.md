@@ -1,5 +1,14 @@
 # Permet l'installation des scripts de tontonCasi
 
+## Author
+tontonCasi : [Steam UID: https// steamcommunity.com/id/Casimodo33/]
+Twitch : https://www.twitch.tv/tontoncasi
+
+## Terms of use:
+- This file is forbidden unless you have permission from the author. If you have this file without permission to use it please do not use it and do not share it.
+- If you have permission to use this file, you can use it on your server however it is strictly forbidden to share it.
+- Out of respect for the author please do not delete this information.
+
 ## Description
 Ce git vous permet d'ajouter des scripts fun pour votre serveur Arma3. Divers script sont en cours de création.
 Ces scripts offert par la chaine twitch "tontonCasi" ont étaient développé pour le projet www.despote-isalnd.com compatible sur une Tonic 5 principalement à vous d'adapter à votre mission. Il peut exploiter le mods pack fournie aussi par tontonCasi à l'url "https://steamcommunity.com/sharedfiles/filedetails/?id=2703875351".
