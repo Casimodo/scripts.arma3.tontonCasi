@@ -13,18 +13,20 @@
 		[this] call c33_fnc_pecheActions;
 	}
 */
-private["_isWater", "_fishClasses", "_fishNames", "_fishClass", "_fishNames"];
+private["_config", "_cannePache", "_isWater", "_poissonList", "_randomFishIndex", "_fishClasses", "_fishNames", "_fishClass", "_fishNames"];
 
-_isWater = surfaceIsWater (visiblePositionASL player);
-
-// Liste des classes d'objets de poissons possibles
-_fishClasses = ["salema_raw", "ornate_raw", "mackerel_raw", "tuna_raw", "mullet_raw", "catshark_raw"];
-_fishNames = ["Saumon", "Doré", "Maquereau", "Thon", "Mullet", "Poisson Chat"];
+_config         = missionConfigFile >> "tontonCasi_Peche";
+_cannePache		= getText (_config >> "className_CannePeche");
+_poissonList   	= _config >> "poissonList";
+_isWater 		= surfaceIsWater (visiblePositionASL player);
+_msg_giveFish	= getText (_config >> "msg_giveFish");
+_msg_notInWater	= getText (_config >> "msg_notInWater");
+_msg_notCanne	= getText (_config >> "msg_notCanne");
 
 if (_isWater) then {
 	if !(life_is_processing) then {
 		// Vérifiez si le joueur a une canne à pêche dans les mains
-		if (currentWeapon player == "vn_m_fishing_rod_01") then {
+		if (currentWeapon player == _cannePache) then {
 			
 			// Setup our progress bar.
 			disableSerialization;
@@ -48,32 +50,34 @@ if (_isWater) then {
 				_pgText ctrlSetText format ["%3 (%1%2)...", round(_cP * 100), "%", "Pêche en cours"];
 				if (_cP >= 1) exitWith {};
 				if !(surfaceIsWater (visiblePositionASL player)) exitWith {
-					hint "Vous n'êtes plus dans l'eau !";
+					hint format[_msg_notInWater];
 				};
 
 			};
 			if !(surfaceIsWater (visiblePositionASL player))exitWith {
-				hint "Vous n'êtes plus dans l'eau !";
+				hint format[_msg_notInWater];
 				"progressBar" cutText ["", "PLAIN"]; life_is_processing = false; life_action_inUse = false;
 			};
 
 			// Générez un indice aléatoire pour choisir un poisson dans la liste
-			_randomFishIndex = floor(random count _fishClasses);
+			_randomFishIndex = floor(random count(_poissonList)-1);
+
+			private _poisson = (_poissonList select _randomFishIndex);
 
 			// Obtenez la classe du poisson à partir de l'indice aléatoire
-			_fishClass = _fishClasses select _randomFishIndex;
-			_fishName = _fishNames select _randomFishIndex;
+			_fishClass = getText(_poisson >> "item");
+			_fishName = getText(_poisson >> "label");
 
 			// Ajoutez le poisson à l'inventaire du joueur
 			if ([true, _fishClass, 1] call life_fnc_handleInv) then {
-				hint format ["Vous avez attrapé un %1 !", _fishName];
+				hint format [_msg_giveFish, _fishName];
 			};
 
             "progressBar" cutText ["","PLAIN"];
             life_is_processing = false; life_action_inUse = false;
 
 		} else {
-			hint "Vous devez avoir une canne à pêche équipée pour pêcher.";
+			hint format[_msg_notCanne];
             "progressBar" cutText ["","PLAIN"];
             life_is_processing = false; life_action_inUse = false;
 		};
