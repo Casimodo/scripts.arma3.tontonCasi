@@ -15,13 +15,13 @@ Sinon rejoinez notre discord à l'adresse "https://discord.gg/qPSwbHNMRd"
 4. Chercher la ligne avec >> #include "CfgRemoteExec.hpp"
 5. Ajouter en dessous la ligne ci-dessous
 ```
-#include "tontonCasi\tontonCasi_dialog_master.cpp"
+#include "tontonCasi\dialog_master.cpp"
 ```
 6. Dans le même fichier, chercher la class "CfgFunctions" et y ajouter à l'intérieur la ligne >> #include "tontonCasi\tontonCasi_CfgFunctions.hpp" exemple ci-dessous
 ```
 class CfgFunctions {
     #include "Functions.hpp"
-    #include "tontonCasi\tontonCasi_CfgFunctions.hpp"
+    #include "tontonCasi\CfgFunctions.hpp"
 };
 ```
 
