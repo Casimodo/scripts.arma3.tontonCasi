@@ -10,4 +10,5 @@
 
 */
 
-[] call c33_fnc_pecheActions;
+[] call c33_fnc_pecheActions;     // Ce lance si au dessus de l'eau et avec canne à pêche
+//[] call c33_fnc_panneauActions;   // Ce lance si devant panneau listé dans le fichier config panneau

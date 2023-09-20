@@ -9,11 +9,11 @@
       - Out of respect for the author please do not delete this information.
 
     Example:
-    call{[this, "bienvenu"] call c33_fnc_panneauActions;}               // auto choice
-    call{[this, ""] call c33_fnc_panneauActions;}                       // auto choice
-    call{[this, "<classNameConfig>"] call c33_fnc_panneauActions;}      // for default selected
+    [] call c33_fnc_panneauActions;     // A mettre dans l'init de votre panneau compatible
 */
-private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_texturesPath"];
+
+
+/*private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_texturesPath"];
 
 _myobject       = _this select 0;
 _selected       = _this select 1;
@@ -50,4 +50,4 @@ for "_i" from 0 to count(_texturesList)-1 do {
         //[nil, nil, nil, "affichePub"] call life_fnc_processingOpenDiag;
     }, [_myobject, _path], 1.5, true, true, "", _licence, 5, false, "", ""];
 
-};
+};*/

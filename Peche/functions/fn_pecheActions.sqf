@@ -9,8 +9,7 @@
       - Out of respect for the author please do not delete this information.
 
 	    Example:
-	    call{
-		[this] call c33_fnc_pecheActions;
+		[] call c33_fnc_pecheActions;
 	}
 */
 private["_config", "_cannePache", "_isWater", "_poissonList", "_randomFishIndex", "_fishClasses", "_fishNames", "_fishClass", "_fishNames"];

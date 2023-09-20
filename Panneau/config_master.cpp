@@ -15,9 +15,22 @@
 
 class tontonCasi_Panneau { 
 
-    licence = "licence_civ_news";  // licence modification de panneau
+    licenceLegale   = "licence_civ_news";                                           // licence modification de panneau legal
+    licenceIllegale = "licence_civ_insurge";                                        // licence modification de panneau legal
+    tarifLegale     = 15;                       // Tarifs si changement 
+    tarifIllegale   = 15000;                                        
 
-    class textureList {
+    // Liste des images aléatoire qui sera affiché sur les panneaux
+    textures[]      = {"pan_bienvenu.paa", "pan_num.paa", "pan_garage.paa"};        
+
+    // Liste des panneaux compatibles avec le système 
+    detectCalss[]   = {
+        "SignAd_SponsorS_F", "SignAd_Sponsor_F", "Land_Noticeboard_F", "Land_Billboard_03_blank_F", "Land_Billboard_02_blank_F",
+        "Land_Billboard_F", "Land_Billboard_04_blank_F"
+    };
+
+    // List des panneaux Legal
+    class panneauLegale {
         
         class bienvenu {
             label   = "Bienvenu";
@@ -30,6 +43,19 @@ class tontonCasi_Panneau {
         };
         
         class infoGarage {
+            label   = "Info. Garage";
+            picture = "pan_garage.paa";
+        };
+    };
+        
+    // List des panneaux illegale
+    class panneauIllegale {
+        class insurgPann1 {
+            label   = "Info. Garage";
+            picture = "pan_garage.paa";
+        };
+        
+        class insurgPann2 {
             label   = "Info. Garage";
             picture = "pan_garage.paa";
         };

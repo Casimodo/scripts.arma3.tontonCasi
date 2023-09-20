@@ -18,6 +18,7 @@ class C33_Client_Core
 	{
 		file = "tontonCasi\Panneau\functions";
 		class panneauActions {};
+		class panneauAleatoire {};
 	};
 
 	class peche
