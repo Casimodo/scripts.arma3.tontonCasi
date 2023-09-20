@@ -12,9 +12,9 @@
     [this] call c33_fnc_panneauActions;     // A mettre dans l'init de votre panneau compatible
 */
 
+private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_texturesPath"];
 
-/*private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_texturesPath"];
-
+/*
 _myobject       = _this select 0;
 _selected       = _this select 1;
 _config         = missionConfigFile >> "tontonCasi_Panneau";
