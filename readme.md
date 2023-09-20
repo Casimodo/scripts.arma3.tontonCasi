@@ -55,7 +55,6 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 - **Description** : Permet d'affichier de la publicité sur des panneaux en aléatoire (voir fichier config pour le détail).
 - **Utilisation** : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
 ```
-// Pour que le panneau affiche une des images en aléatoire
 [this] call c33_fnc_panneauAleatoire; 
 ```
 
@@ -65,6 +64,5 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 - **Description** : Permet de modifier par la touche action le contenu d'un panneau deux type dispo en fonction de licence "pub légale" et "pub illégale" (voir fichier config pour le détail).
 - **Utilisation** : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
 ```
-// Pour que le panneau affiche une des images en aléatoire
 [this] call c33_fnc_panneauActions; 
 ```
