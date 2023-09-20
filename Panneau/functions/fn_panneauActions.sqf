@@ -9,7 +9,7 @@
       - Out of respect for the author please do not delete this information.
 
     Example:
-    [] call c33_fnc_panneauActions;     // A mettre dans l'init de votre panneau compatible
+    [this] call c33_fnc_panneauActions;     // A mettre dans l'init de votre panneau compatible
 */
 
 

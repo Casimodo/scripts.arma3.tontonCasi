@@ -47,9 +47,24 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 ### Peche
 - Version : 1.1
 - Status : OK
-- Description : Prenez une canne à pêche className dans le fichier de config et mettez vous au dessus de l'eau et appuyez sur votre touche d'action les items poissons sont référencé dans le fichier de config.
+- Description : Prenez une canne à pêche au dessus de l'eau et action, la pêche ce lance (voir fichier config pour le détail).
 
-### Panneau 
+### Panneau "aléatoire"
+- Version : 1.0
+- Status : OK
+- Description : Permet d'affichier de la publicité sur des panneaux en aléatoire (voir fichier config pour le détail).
+- Utilisation : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
+```
+// Pour que le panneau affiche une des images en aléatoire
+[this] call c33_fnc_panneauAleatoire; 
+```
+
+### Panneau "action pub"
 - Version : 0.1
-- Status : En cours dev
-- Description : Permet d'affichier de la publicité sur des panneaux dynamiquement et en aléatoire. En jeux avec une licence "civ_licence_news" vous pourrez modifier les panneaux graces à un item et être rénuméré exemple métier de reporter.
+- Status : Dev en cour (non visible dans le github pour l'instant)
+- Description : Permet de modifier par la touche action le contenu d'un panneau deux type dispo en fonction de licence "pub légale" et "pub illégale" (voir fichier config pour le détail).
+- Utilisation : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
+```
+// Pour que le panneau affiche une des images en aléatoire
+[this] call c33_fnc_panneauActions; 
+```
