@@ -9,6 +9,7 @@
       - Out of respect for the author please do not delete this information.
 
 */
+#include "Panneau\screen.hpp"
 
 class C33_Client_Core
 {
