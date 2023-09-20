@@ -20,7 +20,7 @@ private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_text
 disableSerialization;
 
 if !(createDialog "panneau_menu") exitWith {};
-private _control = CONTROL(66001,66002);
+private _control = CONTROL(66000,66002);
 
 private _displayName = "toto";
 private _key = 101;
@@ -30,7 +30,18 @@ private _price = 100;
 // boucle
 _control lbAdd _displayName;
 //_control lbSetData [(lbSize _control)-1, _key];
-_control lbSetPicture [(lbSize _control)-1, _picture];
+//_control lbSetPicture [(lbSize _control)-1, _picture];
+_control lbSetValue [(lbSize _control)-1, _price];
+
+_control lbAdd _displayName;
+//_control lbSetData [(lbSize _control)-1, _key];
+//_control lbSetPicture [(lbSize _control)-1, _picture];
+_control lbSetValue [(lbSize _control)-1, _price];
+
+
+_control lbAdd _displayName;
+//_control lbSetData [(lbSize _control)-1, _key];
+//_control lbSetPicture [(lbSize _control)-1, _picture];
 _control lbSetValue [(lbSize _control)-1, _price];
 
 /*

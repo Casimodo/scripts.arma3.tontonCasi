@@ -1,7 +1,7 @@
 // Définition de la structure de la fenêtre de dialogue
 class panneau_menu {
     idd = 66000;
-    movingEnable = true;
+    movingEnable = 0;
     enableSimulation = 1;
 
     class controlsBackground {
