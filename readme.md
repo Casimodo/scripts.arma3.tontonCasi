@@ -45,25 +45,25 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 ## Les Modules
 
 ### Peche
-- Version : 1.1
-- Status : OK
-- Description : Prenez une canne à pêche au dessus de l'eau et action, la pêche ce lance (voir fichier config pour le détail).
+- **Version** : 1.1
+- **Status** : OK
+- **Description** : Prenez une canne à pêche au dessus de l'eau et action, la pêche ce lance (voir fichier config pour le détail).
 
 ### Panneau "aléatoire"
-- Version : 1.0
-- Status : OK
-- Description : Permet d'affichier de la publicité sur des panneaux en aléatoire (voir fichier config pour le détail).
-- Utilisation : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
+- **Version** : 1.0
+- **Status** : OK
+- **Description** : Permet d'affichier de la publicité sur des panneaux en aléatoire (voir fichier config pour le détail).
+- **Utilisation** : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
 ```
 // Pour que le panneau affiche une des images en aléatoire
 [this] call c33_fnc_panneauAleatoire; 
 ```
 
 ### Panneau "action pub"
-- Version : 0.1
-- Status : Dev en cour (non visible dans le github pour l'instant)
-- Description : Permet de modifier par la touche action le contenu d'un panneau deux type dispo en fonction de licence "pub légale" et "pub illégale" (voir fichier config pour le détail).
-- Utilisation : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
+- **Version** : 0.1
+- **Status** : *Dev en cour (non visible dans le github pour l'instant)*
+- **Description** : Permet de modifier par la touche action le contenu d'un panneau deux type dispo en fonction de licence "pub légale" et "pub illégale" (voir fichier config pour le détail).
+- **Utilisation** : Mettre la ligne ci-dessous dans l'init de votre panneau "liste des images dans le fichier de config et dossier textures"
 ```
 // Pour que le panneau affiche une des images en aléatoire
 [this] call c33_fnc_panneauActions; 
