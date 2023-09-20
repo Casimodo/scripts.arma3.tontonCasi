@@ -1,3 +1,4 @@
+#include "..\..\..\script_macros.hpp"
 /*
     Author: tontonCasi [Steam UID: https// steamcommunity.com/id/Casimodo33/]
     Twitch : https://www.twitch.tv/tontoncasi
@@ -12,7 +13,25 @@
     [this] call c33_fnc_panneauActions;     // A mettre dans l'init de votre panneau compatible
 */
 
+// \Test%20test\mpmissions\dev.Cam_Lao_Nam\core\shops\fn_chopShopMenu.sqf
+// \Test%20test\mpmissions\dev.Cam_Lao_Nam\dialog\chop_shop.hpp
+
 private["_myobject", "_selected", "_licence", "_config", "_texturesList", "_texturesPath"];
+disableSerialization;
+
+if !(createDialog "panneau_menu") exitWith {};
+private _control = CONTROL(66001,66002);
+
+private _displayName = "toto";
+private _key = 101;
+private _picture = "";
+private _price = 100;
+
+// boucle
+_control lbAdd _displayName;
+//_control lbSetData [(lbSize _control)-1, _key];
+_control lbSetPicture [(lbSize _control)-1, _picture];
+_control lbSetValue [(lbSize _control)-1, _price];
 
 /*
 _myobject       = _this select 0;
