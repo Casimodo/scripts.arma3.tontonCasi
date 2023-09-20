@@ -27,7 +27,6 @@ if(typeOf _myobject in _detectCalss) then {
     _texture        = (_textureList select _textureIndex);
     _path           = format ["%1\%2", _texturesPath, _texture];
 
-    hint format[">>%1 >>%2", _textureList, _texture];
     // Ont applique les textures
     (_myobject) setobjecttextureGlobal [0, _path];
     (_myobject) setobjecttextureGlobal [1, _path];
