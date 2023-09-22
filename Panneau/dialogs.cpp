@@ -10,3 +10,5 @@
 
 */
 #include "config_master.cpp"
+
+#include "dialogs\screen.hpp"
