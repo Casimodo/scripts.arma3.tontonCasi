@@ -9,30 +9,39 @@
       - Out of respect for the author please do not delete this information.
 
 */
-private["_myobject", "_config", "_texturesList", "_detectCalss", "_texturesPath", "_textureIndex"];
+private["_pClassName", "_panneauList", "_panneau", "_config", "_objectName", "_texture", "_path", "_distance", "_playerPos", "_detectCalss", "_nearbyObjects", "_texturesPath", "_textureIndex"];
 
 
-_pann_ClassName = lbData[6002,(lbCurSel 6002)];
+_pClassName  = lbData[6002,(lbCurSel 6002)];
 
-hint format[">>>%1", _type];
-/*
-_myobject       = _this select 0;
 _config         = missionConfigFile >> "tontonCasi_Panneau";
-_textureList    = getArray(_config >> "textures");
-_detectCalss    = getArray(_config >> "detectCalss");
+_panneauList    = (_config >> "panneauList");
+_panneau        = (_panneauList >> _pClassName);
 _texturesPath   = "tontonCasi\Panneau\textures";
+_detectCalss    = getArray(_config >> "detectCalss");
 
-// Vérifie que le panneau est authorisé
-if(typeOf _myobject in _detectCalss) then {
+_texture        = getText(_panneau >> "picture");
+_path           = format ["%1\%2", _texturesPath, _texture];
 
-    // Générez un indice aléatoire
-	_textureIndex   = floor(random count(_textureList));
-    _texture        = (_textureList select _textureIndex);
-    _path           = format ["%1\%2", _texturesPath, _texture];
+// Définir le rayon de détection autour du joueur (en mètres)
+_distance = 5;
 
-    // Ont applique les textures
-    (_myobject) setobjecttextureGlobal [0, _path];
-    (_myobject) setobjecttextureGlobal [1, _path];
+// Obtenir la position du joueur
+_playerPos = getPos player;
 
-};
-*/
+// Utiliser nearestObjects pour trouver les objets autour du joueur
+_nearbyObjects = nearestObjects [_playerPos, [], _distance];
+
+{
+    _objectName = typeOf _x;
+    _myObject = _x;
+
+    // Recherche si l'objet est l'un des panneaux connus
+    if (_objectName in _detectCalss) exitWith {
+        
+        // Ont applique les textures
+        (_myobject) setobjecttextureGlobal [0, _path];
+        (_myobject) setobjecttextureGlobal [1, _path];        
+
+    };
+} forEach _nearbyObjects;

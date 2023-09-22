@@ -13,7 +13,7 @@
     [] call c33_fnc_panneauActions;
 */
 
-private["_config", "_detectCalss", "_texturesPath", "_pannList", "_vitemLegale", "_vitemIllegale", "_nbVitemLegal", "_nbVitemIllegal", "_distance", "_playerPos", "_nearbyObjects", "_objectName"];
+private["_config", "_detectCalss", "_texturesPath", "_myObject", "_pannList", "_vitemLegale", "_vitemIllegale", "_nbVitemLegal", "_nbVitemIllegal", "_distance", "_playerPos", "_nearbyObjects", "_objectName"];
 disableSerialization;
 
 _config         = missionConfigFile >> "tontonCasi_Panneau";
@@ -41,6 +41,7 @@ _nearbyObjects = nearestObjects [_playerPos, [], _distance];
 // Afficher les noms des objets trouvés dans la console
 {
     _objectName = typeOf _x;
+    _myObject = _x;
     // Recherche si l'objet est l'un des panneaux connus
     if (_objectName in _detectCalss) then {
         

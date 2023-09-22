@@ -51,14 +51,14 @@ class tontonCasi_Panneau {
 
         // Panneaux non légal
         class insurgPann1 {
-            label   = "other exemple 1";
-            picture = "pan_garage.paa";
+            label   = "Exemple rebel 1";
+            picture = "pan_rebel.paa";
             legal   = 0;
         };
         
         class insurgPann2 {
-            label   = "other exemple 2";
-            picture = "pan_garage.paa";
+            label   = "Exemple rebel 2";
+            picture = "pan_rebel1.paa";
             legal   = 0;
         };
     };
