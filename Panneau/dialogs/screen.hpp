@@ -1,6 +1,7 @@
 // Définition de la structure de la fenêtre de dialogue
 class panneau_menu {
-    idd = 66000;
+    idd = 6000;
+    name ="panneau_menu";
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -45,9 +46,9 @@ class panneau_menu {
     };
 
     class controls {
-        class vehicleList: Life_RscListBox {
-            idd = 66002;
-            onLBSelChanged = "_this call life_fnc_chopShopSelection";
+        class _pann_list: Life_RscListBox {
+            idc = 6002;
+            //onLBSelChanged = "_this call life_fnc_chopShopSelection";
             sizeEx = 0.04;
             x = 0.11;
             y = 0.25;
@@ -55,10 +56,10 @@ class panneau_menu {
             h = 0.38;
         };
 
-        class BtnSell: Life_RscButtonMenu {
+        class BtnChoice: Life_RscButtonMenu {
             idc = -1;
             text = "Choisir";
-            onButtonclick = "[] call life_fnc_chopShopSell;";
+            onButtonclick = "[] call c33_fnc_panneauChange;";
             x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.8 - (1 / 25);
             w = (6.25 / 40);

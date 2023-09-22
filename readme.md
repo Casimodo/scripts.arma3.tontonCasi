@@ -66,3 +66,28 @@ Faire attention si vous avez récupéré par un git pull les fichiers afin de fa
 ```
 [this] call c33_fnc_panneauActions; 
 ```
+- **Configurations** : vItem à ajouter, ainsi que la traduction, exemple ci-dessous des vitems (doivent correspondre au fichier config pour le détail).
+```
+class panneau_papier {
+    variable = "pann_papier";
+    displayName = "STR_Item_panneau_papier";
+    weight = 1;
+    buyPrice = -1;
+    sellPrice = 150;
+    illegal = false;
+    edible = -1;
+    drinkable = -1;
+    icon = "";
+};
+class panneau_papier_sale {
+    variable = "papier_sale";
+    displayName = "STR_Item_panneau_papier_sale";
+    weight = 1;
+    buyPrice = -1;
+    sellPrice = 15000;
+    illegal = true;
+    edible = -1;
+    drinkable = -1;
+    icon = "";
+};
+```

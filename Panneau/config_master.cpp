@@ -15,10 +15,8 @@
 
 class tontonCasi_Panneau { 
 
-    licenceLegale   = "licence_civ_news";                                           // licence modification de panneau legal
-    licenceIllegale = "licence_civ_insurge";                                        // licence modification de panneau legal
-    tarifLegale     = 15;                       // Tarifs si changement 
-    tarifIllegale   = 15000;                                        
+    itemLegale     = "panneau_papier";                  // vItem legal requis pour avoir accès au panneau ==> [true,"panneau_papier",1] call life_fnc_handleInv
+    itemIllegale   = "panneau_papier_sale";              // vItem illegal requis pour avoir accès au panneau (illégaux)
 
     // Liste des images aléatoire qui sera affiché sur les panneaux
     textures[]      = {"pan_bienvenu.paa", "pan_num.paa", "pan_garage.paa"};        
@@ -29,35 +27,39 @@ class tontonCasi_Panneau {
         "Land_Billboard_F", "Land_Billboard_04_blank_F"
     };
 
-    // List des panneaux Legal
-    class panneauLegale {
+    // List des panneaux
+    class panneauList {
         
+        // Panneaux légal
         class bienvenu {
             label   = "Bienvenu";
             picture = "pan_bienvenu.paa";
+            legal   = 1;
         };
         
         class numbersIle {
             label   = "Numeros Ile";
             picture = "pan_num.paa";
+            legal   = 1;
         };
         
         class infoGarage {
             label   = "Info. Garage";
             picture = "pan_garage.paa";
+            legal   = 1;
         };
-    };
-        
-    // List des panneaux illegale
-    class panneauIllegale {
+
+        // Panneaux non légal
         class insurgPann1 {
-            label   = "Info. Garage";
+            label   = "other exemple 1";
             picture = "pan_garage.paa";
+            legal   = 0;
         };
         
         class insurgPann2 {
-            label   = "Info. Garage";
+            label   = "other exemple 2";
             picture = "pan_garage.paa";
+            legal   = 0;
         };
     };
 };  
