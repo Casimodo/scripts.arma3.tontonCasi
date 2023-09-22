@@ -15,7 +15,7 @@
 
 class tontonCasi_Panneau { 
 
-    itemLegale     = "panneau_papier";                  // vItem legal requis pour avoir accès au panneau ==> [true,"panneau_papier",1] call life_fnc_handleInv
+    itemLegale     = "panneau_papier";                  // vItem legal requis pour avoir accès au panneau ==> [true,"panneau_papier",1] call life_fnc_handleInv;
     itemIllegale   = "panneau_papier_sale";              // vItem illegal requis pour avoir accès au panneau (illégaux)
 
     // Liste des images aléatoire qui sera affiché sur les panneaux
