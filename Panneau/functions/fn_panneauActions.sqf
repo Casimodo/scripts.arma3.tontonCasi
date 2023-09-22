@@ -30,7 +30,7 @@ _nbVitemIllegal = ITEM_VALUE(_vitemIllegale);
 if ((_nbVitemLegal isEqualTo 0) && (_nbVitemIllegal isEqualTo 0)) exitWith {};    
 
 // Définir le rayon de détection autour du joueur (en mètres)
-_distance = 5;
+_distance = 15;
 
 // Obtenir la position du joueur
 _playerPos = getPos player;

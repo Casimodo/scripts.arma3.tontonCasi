@@ -24,7 +24,7 @@ _texture        = getText(_panneau >> "picture");
 _path           = format ["%1\%2", _texturesPath, _texture];
 
 // Définir le rayon de détection autour du joueur (en mètres)
-_distance = 5;
+_distance = 15;
 
 // Obtenir la position du joueur
 _playerPos = getPos player;
