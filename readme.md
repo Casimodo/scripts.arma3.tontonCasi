@@ -3,14 +3,12 @@
 [![GitHub release](https://img.shields.io/github/v/release/Casimodo/scripts.arma3.tontonCasi.svg)](https://github.com/Casimodo/scripts.arma3.tontonCasi/releases)
 [![Github All Releases](https://img.shields.io/github/downloads/Casimodo/scripts.arma3.tontonCasi/total.svg)](https://github.com/Casimodo/scripts.arma3.tontonCasi/releases)
 
-## Author
-- **tontonCasi :** [Steam UID: https// steamcommunity.com/id/Casimodo33/]
-- **Twitch :** https://www.twitch.tv/tontoncasi
-
-## Terms of use:
-- This file is forbidden unless you have permission from the author. If you have this file without permission to use it please do not use it and do not share it.
-- If you have permission to use this file, you can use it on your server however it is strictly forbidden to share it.
-- Out of respect for the author please do not delete this information.
+# Qui suis-je
+  Joueur de tout et surtout rôle Play ! Développeur depuis plus de 30 ans dans différentes technos (web, embarqué...), Créateur 3 D, Mods, Script Arma, GTAv... Je joue sur un peu de tout Arma, GTA, Farming, Satisfactory. Mais le RP reste mon dada ! 
+  Suivez-moi sur 
+  - Twitch : https://www.twitch.tv/tontoncasi/about *(bas de page Discord)*
+  - Kick : https://kick.com/tontoncasi
+  - Youtube : https://www.youtube.com/@tontonCasi/streams
 
 ## Description
 Ce git vous permet d'ajouter des scripts fun pour votre serveur Arma3. Divers script sont en cours de création.
