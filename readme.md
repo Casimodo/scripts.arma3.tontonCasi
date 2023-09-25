@@ -1,4 +1,7 @@
-# Permet l'installation des scripts de tontonCasi
+**Pour télécharger cliquer sur l'une des étiquettes ci-dessous**
+
+[![GitHub release](https://img.shields.io/github/v/release/Casimodo/scripts.arma3.tontonCasi.svg)](https://github.com/Casimodo/scripts.arma3.tontonCasi/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/Casimodo/scripts.arma3.tontonCasi/total.svg)](https://github.com/Casimodo/scripts.arma3.tontonCasi/releases)
 
 ## Author
 - **tontonCasi :** [Steam UID: https// steamcommunity.com/id/Casimodo33/]
