@@ -1,4 +1,15 @@
-// Définition de la structure de la fenêtre de dialogue
+/*
+    file : screen.hpp
+
+    Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
+    Licence : MIT
+    Source : https://github.com/Casimodo/police_rp
+    Terms of use:
+      This file comes from a source code covered by the MIT license please respect this. 
+      All component files this code is filed, signed and certified with the competent international authority 
+      in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
+*/
+
 class panneau_menu {
     idd = 6000;
     name ="panneau_menu";
