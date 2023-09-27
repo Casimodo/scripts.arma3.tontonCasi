@@ -4,7 +4,7 @@
 
     Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
     Licence : MIT
-    Source : https://github.com/Casimodo/police_rp
+    Source : https://github.com/Casimodo/scripts.arma3.tontonCasi
     Terms of use:
       This file comes from a source code covered by the MIT license please respect this. 
       All component files this code is filed, signed and certified with the competent international authority 
