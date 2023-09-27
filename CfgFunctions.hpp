@@ -28,4 +28,9 @@ class C33_Client_Core
 		class pecheActions {};
 	};
 
+	class farm
+	{
+		file = "tontonCasi\Farm\functions";
+		class farmActions {};
+	};
 };

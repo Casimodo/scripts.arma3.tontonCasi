@@ -12,3 +12,4 @@
 
 #include "Panneau\dialogs.cpp"
 #include "Peche\dialogs.cpp"
+#include "Farm\dialogs.cpp"
