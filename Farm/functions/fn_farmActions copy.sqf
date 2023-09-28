@@ -49,6 +49,8 @@ _o = [];
     _objectName = (_objectName select 0);
     _o pushBack _objectName;
 
+    private _qt = player getVariable ["qt_rest", 10];
+
     // Recherche si l'objet est l'un des panneaux connus
     if (_objectName in _ressoucesCfgList) then{
 
@@ -56,15 +58,13 @@ _o = [];
         private _ddObj = position _myObject;
         _deltaDistance = _playerPos distance _ddObj;
 
-        // Met en mémoire la distance pour limiter le farm
-        if (_qtMem == 10) then {
+        // Met en mémoire 
+        if (_qt == 10) then {
             player setVariable ["tonton_farm_distance", _deltaDistance, true];                
         };
 
-        private _qtMem = player getVariable ["qt_rest", 10];
-
-        _qtMem = _qtMem - 1;
-        player setVariable ["qt_rest", _qtMem, true];
+        _qt = _qt - 1;
+        player setVariable ["qt_rest", _qt, true];
 
         hint format[">>>tu rama: %1 / reste: %2 / dis: %3", _objectName, _qt, _deltaDistance];
         /*if !(createDialog "panneau_menu") exitWith {};

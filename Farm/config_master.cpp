@@ -12,6 +12,26 @@
 
 class tontonCasi_Farm { 
 
-    class f
+    class farmList {
+        
+        class Land_vn_t_cacao_ripe_f {
+            name = "Fève de cacao";
+            condition = "";
+            amount = 3;
+            vitem = "cocoUnprocessed";
+            max_amount = 10;
+            animation = "";
+        };
+        
+        class vn_t_cocosnucifera3s_tall_f {
+            name = "Fève de cacao";
+            condition = "";
+            amount = 3;
+            vitem = "cocoUnprocessed";
+            max_amount = 10;
+            animation = "";
+        };
+
+    };
 
 };  
