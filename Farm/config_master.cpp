@@ -16,35 +16,28 @@ class tontonCasi_Farm {
         
         // ===============================================
         class cacaotier {
-            name = "fève de cacao";
-            condition = "";
             vitem = "cocoUnprocessed";
             max_amount = 8;
-            animation = "";
-            message = "Reste %1 sur le cacaotier";
+            message = "Reste %1 fève(s) de cacao sur le cacaotier";
         };
         class Land_vn_t_cacao_ripe_f : cacaotier {};
         
         // ===============================================
         class cocotier {
-            name = "Caco";
-            condition = "";
             vitem = "cocoUnprocessed";
             max_amount = 5;
-            animation = "";
-            message = "Reste %1 sur le cocotier";
+            message = "Reste %1 coco(s) sur le cocotier";
         };
         class vn_t_cocosnucifera3s_tall_f : cocotier {};
         class vn_t_cocosnucifera2s_small_f : cocotier {};
 
         // ===============================================
         class bananier {
-            name = "Banane";
             condition = "";
             vitem = "cocoUnprocessed";
             max_amount = 10;
             animation = "";
-            message = "Reste %1 sur le bananier";
+            message = "Reste %1 banane(s) sur le bananier";
         };
         class vn_t_banana_slim_f : bananier {};
 

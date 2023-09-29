@@ -77,7 +77,7 @@ if (_isWater) then {
             life_is_processing = false; life_action_inUse = false;
 
 		} else {
-			hint format[_msg_notCanne];
+			//hint format[_msg_notCanne];
             "progressBar" cutText ["","PLAIN"];
             life_is_processing = false; life_action_inUse = false;
 		};
