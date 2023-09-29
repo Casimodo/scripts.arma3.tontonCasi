@@ -91,12 +91,14 @@ if !(isNull _myObject) then {
             _tFarm_qt = _tFarm_qt - 1;
             _myMemCube setVariable ["tFarm_qt", _tFarm_qt];
 
-            if (_tFarm_qt >= 0) then {  // si reste sur l'arbre
+            // si reste sur l'arbre
+            if (_tFarm_qt >= 0) then {  
                 // Ajout item dans la poche
                 hint format[_message, _tFarm_qt];
             };
 
-            if (_tFarm_qt < 1) then {  // si plus sur l'arbre destruction de celui-ci
+            // si plus sur l'arbre destruction de celui-ci
+            if (_tFarm_qt < 1) then {  
                 _myObject hideObjectGlobal true; 
                 _myObject setVariable ['hidden_adm',true,true];
                 deleteVehicle _myMemCube;
