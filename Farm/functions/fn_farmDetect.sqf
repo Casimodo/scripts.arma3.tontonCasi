@@ -17,6 +17,15 @@
 private["_t"];
 
 hint "";
-_t = typeOf cursorObject;
-hint format[">>%1", _t];
-copyToClipboard str _t;
+_playerPos      = getPos player;
+_distance       = 8;
+
+_isTypeof = false;
+_nearbyObjects = nearestTerrainObjects[_playerPos, [ "Tree", "Bush" ], _distance];
+if (count _nearbyObjects isEqualTo 0) then {
+    _nearbyObjects = nearestObjects [_playerPos, [], _distance];
+    _isTypeof = true;
+};
+
+hint format[">>%1", _nearbyObjects];
+copyToClipboard str _nearbyObjects;

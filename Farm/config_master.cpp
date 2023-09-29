@@ -21,6 +21,7 @@ class tontonCasi_Farm {
             message = "Reste %1 fève(s) de cacao sur le cacaotier";
         };
         class Land_vn_t_cacao_ripe_f : cacaotier {};
+        class vn_t_cacao_ripe_f : cacaotier {};
         
         // ===============================================
         class cocotier {

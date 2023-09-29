@@ -35,6 +35,7 @@ hint "";
 _myObject = cursorObject;
 _tFarm_qt = 0;
 
+life_action_inUse = false;
 if !(life_action_inUse) then {
     life_action_inUse = true;
 
@@ -44,78 +45,81 @@ if !(life_action_inUse) then {
 
         if !(isNull _myObject) then {
 
+            _objPos = position _myObject;
+            _distCalc = _objPos distance _playerPos;
+
+            //if (_distCalc <)
+
             if (_isTypeof) then {
                 _objectName = typeOf _myObject;
             }else{
-                if (_objectName isEqualTo "") then {
-                    _objectName = (str _myObject) splitString ": ";
-                    _objectName = (_objectName select 1) splitString ".";
-                    _objectName = (_objectName select 0);
-                };
+                _objectName = (str _myObject) splitString ": ";
+                _objectName = (_objectName select 1) splitString ".";
+                _objectName = (_objectName select 0);
             };
                 
             if (isClass (_resourceCfg >> _objectName)) then {
+                
+                _foundMemFarmCube = nearestObjects [position player, ["Land_VR_Shape_01_cube_1m_F"], 5];
 
-                _objPos = position _myObject;
-                _distance = _objPos distance _playerPos;
+                _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
+                _message = getText(_resourceCfg >> _objectName >> "message");
+                _vItem = getText(_resourceCfg >> _objectName >> "vitem");
 
-                if (_distance < 23) then {  // pour limiter et pas farm à plus de n distance
+                // Si cette arbre n'a pas encore était farm
+                if (count _foundMemFarmCube isEqualTo 0) then {
+                    
+                    // Créer le cube et lui mettre les infos
+                    //_myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
+                    _myMemCube = createVehicle ["Land_VR_Shape_01_cube_1m_F", [_objPos # 0, _objPos # 1, 0], [], 0, "CAN_COLLIDE"];
+                    _myMemCube hideObject true;
+                    _tFarm_qt = _max_amount;
+                    sleep 0.1;
+                } else {
+                    _myMemCube = (_foundMemFarmCube select 0);
+                    _tFarm_qt = _myMemCube getVariable ["tFarm_qt", _max_amount];
+                };
 
-                    _foundMemFarmCube = nearestObjects [_objPos, ["Land_VR_Shape_01_cube_1m_F"], 23];
+                if (_tFarm_qt isEqualTo 0) exitWith {};
 
-                    _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
-                    _message = getText(_resourceCfg >> _objectName >> "message");
-                    _vItem = getText(_resourceCfg >> _objectName >> "vitem");
+                // Suppression d'item sur l'arbre
+                _tFarm_qt = _tFarm_qt - 1;
+                _myMemCube setVariable ["tFarm_qt", _tFarm_qt, true];
+                hint format["_objectName:%1, / _myObject:%2 / _isTypeof:%3 / _distCalc:%4 / life_action_inUse:%5 / _vItem:%6 / _tFarm_qt:%7", str _objectName, _myObject, _isTypeof, _distCalc, life_action_inUse, _vItem, _tFarm_qt];
 
-                    // Si cette arbre n'a pas encore était farm
-                    if (count _foundMemFarmCube isEqualTo 0) then {
-                        
-                        // Créer le cube et lui mettre les infos
-                        _myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
-                        _myMemCube hideObject true;
-                        _tFarm_qt = _max_amount;
-                    } else {
-                        _myMemCube = (_foundMemFarmCube select 0);
-                        _tFarm_qt = _myMemCube getVariable ["tFarm_qt", _max_amount];
-                    };
+                // si reste sur l'arbre
+                if (_tFarm_qt >= 0) then {  
 
-                    if (_tFarm_qt isEqualTo 0) exitWith {};
-
-                    // Suppression d'item sur l'arbre
-                    _tFarm_qt = _tFarm_qt - 1;
-                    _myMemCube setVariable ["tFarm_qt", _tFarm_qt];
-
-                    // si reste sur l'arbre
-                    if (_tFarm_qt >= 0) then {  
-
-                        // Ajout item dans la poche
-                        if ([true, _vItem, 1] call life_fnc_handleInv) then {
-                        
-                            // Animation
-                            if (animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon") then {
-                                [player,"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
-                                player switchMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-                                player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-                            };
-                            sleep 1;
-
-                            // Message
-                            hint format[_message, _tFarm_qt];
-
-                        } else {
-                            _myMemCube setVariable ["tFarm_qt", (_tFarm_qt + 1)];
+                    // Ajout item dans la poche
+                    if ([true, _vItem, 1] call life_fnc_handleInv) then {
+                    
+                        // Animation
+                        if (animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon") then {
+                            [player,"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
+                            player switchMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+                            player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
                         };
+                        sleep 1;
+                        life_action_inUse = false;
 
-                    };
+                        // Message
+                        hint format[_message, _tFarm_qt];
 
-                    // si plus sur l'arbre destruction de celui-ci
-                    if (_tFarm_qt < 1) then {  
-                        _myObject hideObjectGlobal true; 
-                        _myObject setVariable ['hidden_adm',true,true];
-                        deleteVehicle _myMemCube;
+                    } else {
+                        _myMemCube setVariable ["tFarm_qt", (_tFarm_qt + 1), true];
                     };
 
                 };
+
+                // si plus sur l'arbre destruction de celui-ci
+                if (_tFarm_qt < 1) then {  
+                    _myObject hideObjectGlobal true; 
+                    //_myObject setVariable ['hidden_adm',true,true];
+                    sleep 5;
+                    deleteVehicle _myMemCube;
+                    life_action_inUse = false;
+                };
+
             };
         };
 
