@@ -45,104 +45,63 @@ if (count _nearbyObjects isEqualTo 0) then {
 
 // Parcours des object dans le coin
 hint "";
-{
-    _myObject = _x;
-    _tFarm_qt = 0;
-    if (_isTypeof) then {
-        _objectName = typeOf _myObject;
-    } else {
-        _objectName = getModelInfo _myObject;
-        _objectName = (_objectName select 0) splitString ".";
+_myObject = cursorObject;
+_tFarm_qt = 0;
+
+if !(isNull _myObject) then {
+
+    _objectName = typeOf _myObject;
+    if (_objectName isEqualTo "") then {
+        _objectName = (str _myObject) splitString ": ";
+        _objectName = (_objectName select 1) splitString ".";
         _objectName = (_objectName select 0);
     };
-    //_o pushBack _objectName;
+    hint format[">>%1",(str _myObject) splitString ":"];
         
     if (isClass (_resourceCfg >> _objectName)) then {
         hint format[">>%1 est class", _objectName];
 
         _objPos = position _myObject;
-        _foundMemFarmCube = nearestObjects [_playerPos, ["Land_VR_Shape_01_cube_1m_F"], 8];
+        _distance = _objPos distance _playerPos;
 
-        _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
-        _message = getText(_resourceCfg >> _objectName >> "message");
+        if (_distance < 23) then {  // pour limiter et pas farm à plus de n distance
 
-        // Si cette arbre n'a pas encore était farm
-        if (count _foundMemFarmCube isEqualTo 0) then {
-            
-            // Créer le cube et lui mettre les infos
-            _myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
-            _tFarm_qt = _max_amount;
-        } else {
-            _myMemCube = (_foundMemFarmCube select 0);
-            _tFarm_qt = _myMemCube getVariable ["tFarm_qt", _max_amount];
-        };
+            _foundMemFarmCube = nearestObjects [_objPos, ["Land_VR_Shape_01_cube_1m_F"], 23];
 
-        if (_tFarm_qt isEqualTo 0) exitWith {};
-        hint str _tFarm_qt;
+            _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
+            _message = getText(_resourceCfg >> _objectName >> "message");
+            _vItem = getText(_resourceCfg >> _objectName >> "vitem");
 
-        // Suppression d'item sur l'arbre
-        _tFarm_qt = _tFarm_qt - 1;
-        _myMemCube setVariable ["tFarm_qt", _tFarm_qt];
+            // Si cette arbre n'a pas encore était farm
+            if (count _foundMemFarmCube isEqualTo 0) then {
+                
+                // Créer le cube et lui mettre les infos
+                _myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
+                _myMemCube hideObject true;
+                _tFarm_qt = _max_amount;
+            } else {
+                _myMemCube = (_foundMemFarmCube select 0);
+                _tFarm_qt = _myMemCube getVariable ["tFarm_qt", _max_amount];
+            };
 
-        if (_tFarm_qt >= 0) then {  // si reste sur l'arbre
-            // Ajout item dans la poche
-            hint format[_message, _tFarm_qt];
-        };
+            if (_tFarm_qt isEqualTo 0) exitWith {};
+            hint str _tFarm_qt;
 
-        if (_tFarm_qt < 1) then {  // si plus sur l'arbre destruction de celui-ci
-            _myObject hideObjectGlobal true; 
-            _myObject setVariable ['hidden_adm',true,true];
+            // Suppression d'item sur l'arbre
+            _tFarm_qt = _tFarm_qt - 1;
+            _myMemCube setVariable ["tFarm_qt", _tFarm_qt];
+
+            if (_tFarm_qt >= 0) then {  // si reste sur l'arbre
+                // Ajout item dans la poche
+                hint format[_message, _tFarm_qt];
+            };
+
+            if (_tFarm_qt < 1) then {  // si plus sur l'arbre destruction de celui-ci
+                _myObject hideObjectGlobal true; 
+                _myObject setVariable ['hidden_adm',true,true];
+                deleteVehicle _myMemCube;
+            };
 
         };
     };
-
-
-
-    // Recherche si l'objet est l'un des panneaux connus
-    // if (_objectName in _ressoucesCfgList) then{
-    
-    //     // Calcul les distance entre le farm et le joueur
-    //     _objPos = position _myObject;
-    //     _deltaDistance = _playerPos distance _objPos;
-
-    //     // Qt sur ce farm
-    //     _qtFarm = getNumber(_resourceCfg >> _objectName >> "max_amount");
-    //     hint format[">>%1",_qtFarm];
-    //     //_tFarm_qt = player getVariable ["_tFarm_qt", 10];
-    //     //hint format["delta: %1 / mem: %2 / diff: %3", _deltaDistance, _tFarm_distance, (_tFarm_distance - _deltaDistance)];
-
-    //     //if ((_tFarm_distance isEqualTo 100) || (_tFarm_distance - _deltaDistance) < 1) then {
-
-    //         player setVariable ["tFarm_distance", _deltaDistance, true];
-
-    //         /*_qtMem = player getVariable ["qt_rest", 10];
-
-    //         _qtMem = _qtMem - 1;
-    //         player setVariable ["qt_rest", _qtMem, true];
-
-    //         hint format[">>>tu rama: %1 / reste: %2 / dis: %3", _objectName, _qt, _deltaDistance];*/
-    //         /*if !(createDialog "panneau_menu") exitWith {};
-
-    //         private _pann_list = CONTROL(6000,6002);
-    //         lbClear _pann_list;
-
-    //         // List des panneaux
-    //         for "_i" from 0 to (count _pannList) - 1 do
-    //         {
-    //             private _panneau    = _pannList select _i;
-    //             private _label      = getText(_panneau >> "label");
-    //             private _picture    = getText(_panneau >> "picture");
-    //             private _legal      = getNumber(_panneau >> "legal");
-
-    //             if (((_legal isEqualTo 1) && (_nbVitemLegal > 0)) || ((_legal isEqualTo 0) && (_nbVitemIllegal > 0))) then {
-    //                 _pann_list lbAdd format["%1", _label];
-    //                 _pann_list lbSetData [(lbSize _pann_list)-1, format["%1", configName  _panneau]];
-    //                 _pann_list lbSetPicture [(lbSize _pann_list)-1, format ["%1\%2", _texturesPath, _picture]];
-    //                 _pann_list lbSetValue [(lbSize _pann_list)-1, 0];
-    //             };
-    //         };*/
-    //     //};
-    // };
-}forEach _nearbyObjects;
-
-//hint str _o;
+};
