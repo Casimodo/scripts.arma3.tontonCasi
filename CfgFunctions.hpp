@@ -32,5 +32,6 @@ class C33_Client_Core
 	{
 		file = "tontonCasi\Farm\functions";
 		class farmActions {};
+		class farmDetect {};
 	};
 };
