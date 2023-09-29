@@ -33,10 +33,8 @@ class tontonCasi_Farm {
 
         // ===============================================
         class bananier {
-            condition = "";
             vitem = "cocoUnprocessed";
             max_amount = 10;
-            animation = "";
             message = "Reste %1 banane(s) sur le bananier";
         };
         class vn_t_banana_slim_f : bananier {};
