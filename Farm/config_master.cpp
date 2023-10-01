@@ -16,7 +16,7 @@ class tontonCasi_Farm {
         
         // ===============================================
         class cacaotier {
-            vitem = "cocoUnprocessed";
+            vitem = "cacaoUnprocessed";
             max_amount = 8;
             message = "Reste %1 fève(s) de cacao sur le cacaotier";
         };
@@ -34,7 +34,7 @@ class tontonCasi_Farm {
 
         // ===============================================
         class bananier {
-            vitem = "cocoUnprocessed";
+            vitem = "banane";
             max_amount = 10;
             message = "Reste %1 banane(s) sur le bananier";
         };
