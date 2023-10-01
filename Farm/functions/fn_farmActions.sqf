@@ -85,7 +85,6 @@ if !(life_action_inUse) then {
                 // Suppression d'item sur l'arbre
                 _tFarm_qt = _tFarm_qt - 1;
                 _myMemCube setVariable ["tFarm_qt", _tFarm_qt, true];
-                hint format["_objectName:%1, / _myObject:%2 / _isTypeof:%3 / _distCalc:%4 / life_action_inUse:%5 / _vItem:%6 / _tFarm_qt:%7", str _objectName, _myObject, _isTypeof, _distCalc, life_action_inUse, _vItem, _tFarm_qt];
 
                 // si reste sur l'arbre
                 if (_tFarm_qt >= 0) then {  
@@ -107,14 +106,19 @@ if !(life_action_inUse) then {
 
                     } else {
                         _myMemCube setVariable ["tFarm_qt", (_tFarm_qt + 1), true];
+                        hint format["Vous n'avez plus de place !"];
                     };
 
                 };
 
                 // si plus sur l'arbre destruction de celui-ci
                 if (_tFarm_qt < 1) then {  
-                    _myObject hideObjectGlobal true; 
-                    //_myObject setVariable ['hidden_adm',true,true];
+                    _myObject hideObjectGlobal true;
+                    deleteVehicle _myObject; 
+                    sleep 0.3;
+                    if(!isNull _myObject) then {
+                        [11,player,0,_myObject] remoteExecCall ['ton_fnc_rem_proxy',2];
+                    };
                     sleep 5;
                     deleteVehicle _myMemCube;
                     life_action_inUse = false;
@@ -127,3 +131,5 @@ if !(life_action_inUse) then {
 
     life_action_inUse = false;
 };
+
+//hint format["_objectName:%1, / _myObject:%2 / _isTypeof:%3 / _distCalc:%4 / life_action_inUse:%5 / _vItem:%6 / _tFarm_qt:%7", str _objectName, _myObject, _isTypeof, _distCalc, life_action_inUse, _vItem, _tFarm_qt];
