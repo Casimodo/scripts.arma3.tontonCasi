@@ -93,11 +93,8 @@ if !(life_action_inUse) then {
                     if ([true, _vItem, 1] call life_fnc_handleInv) then {
                     
                         // Animation
-                        if (animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon") then {
-                            [player,"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
-                            player switchMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-                            player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-                        };
+                        player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+                        waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
                         sleep 1;
                         life_action_inUse = false;
 
