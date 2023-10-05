@@ -115,11 +115,10 @@ if !(life_action_inUse) then {
                 if (_tFarm_qt < 1) then {  
                     _myObject hideObjectGlobal true;
                     deleteVehicle _myObject; 
-                    sleep 0.3;
-                    if(!isNull _myObject) then {
-                        [11,player,0,_myObject] remoteExecCall ['ton_fnc_rem_proxy',2];
-                    };
+				    _myObject setVariable ['hidden_adm',true,true];
+                    _myObject hideObject true;
                     sleep 5;
+
                     deleteVehicle _myMemCube;
                     life_action_inUse = false;
                 };
