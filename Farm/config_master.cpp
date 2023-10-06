@@ -43,6 +43,7 @@ class tontonCasi_Farm {
             long_distance   = -1;
         };
         class vn_t_banana_slim_f : bananier {};
+        class vn_t_banana_f : bananier {};
 
     };
 
