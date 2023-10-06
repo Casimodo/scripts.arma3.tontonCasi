@@ -21,6 +21,14 @@ _resourceCfg = _config >> "farmList";
 
 // Obtenir la position du joueur
 _playerPos      = getPos player;
+_distance       = 8;
+
+_isTypeof = false;
+_nearbyObjects = nearestTerrainObjects[_playerPos, [ "Tree", "Bush" ], _distance];
+if (count _nearbyObjects isEqualTo 0) then {
+    _nearbyObjects = nearestObjects [_playerPos, [], _distance];
+    _isTypeof = true;
+};
 
 // Parcours des object dans le coin
 hint "";
@@ -31,44 +39,40 @@ life_action_inUse = false;
 if !(life_action_inUse) then {
     life_action_inUse = true;
 
-    _myObject = cursorObject;
-    
-    if !(isNull _myObject) then {
+    {
 
-        _objPos = position _myObject;
-        _distCalc = _objPos distance _playerPos;
-        
-        _objectName = typeOf _myObject;
-        if (_objectName isEqualTo "") then {
-            _objectName = (str _myObject) splitString ": ";
-            _objectName = (_objectName select 1) splitString ".";
-            _objectName = (_objectName select 0);
-        };
-        
-        if (isClass (_resourceCfg >> _objectName)) then {
-                
-            _foundMemFarmCube = nearestObjects [position player, ["Land_VR_Shape_01_cube_1m_F"], 3];
+        _myObject = _x;
 
-            _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
-            _long_distance = getNumber(_resourceCfg >> _objectName >> "long_distance");
-            _message = getText(_resourceCfg >> _objectName >> "message");
-            _vItem = getText(_resourceCfg >> _objectName >> "vitem");
+        if !(isNull _myObject) then {
 
-            _distance = 2;
-            if (_long_distance isEqualTo 1) then {
-                _distance = 23;
+            _objPos = position _myObject;
+            _distCalc = _objPos distance _playerPos;
+
+            //if (_distCalc <)
+
+            if (_isTypeof) then {
+                _objectName = typeOf _myObject;
+            }else{
+                _objectName = (str _myObject) splitString ": ";
+                _objectName = (_objectName select 1) splitString ".";
+                _objectName = (_objectName select 0);
             };
+                
+            if (isClass (_resourceCfg >> _objectName)) then {
+                
+                _foundMemFarmCube = nearestObjects [position player, ["Land_VR_Shape_01_cube_1m_F"], 5];
 
-            hint format[">>>%1 / %2 / %3", _myObject, _distCalc, _foundMemFarmCube];
+                _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
+                _message = getText(_resourceCfg >> _objectName >> "message");
+                _vItem = getText(_resourceCfg >> _objectName >> "vitem");
 
-            if (_distCalc <= _distance) then {            
                 // Si cette arbre n'a pas encore était farm
                 if (count _foundMemFarmCube isEqualTo 0) then {
                     
                     // Créer le cube et lui mettre les infos
                     //_myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
-                    _myMemCube = createVehicle ["Land_VR_Shape_01_cube_1m_F", [_objPos # 0, _objPos # 1, ((getPos player) # 2) - 1.5], [], 0, "CAN_COLLIDE"];
-                    //_myMemCube hideObject true;
+                    _myMemCube = createVehicle ["Land_VR_Shape_01_cube_1m_F", [_objPos # 0, _objPos # 1, 0], [], 0, "CAN_COLLIDE"];
+                    _myMemCube hideObject true;
                     _tFarm_qt = _max_amount;
                     sleep 0.1;
                 } else {
@@ -108,18 +112,18 @@ if !(life_action_inUse) then {
                 if (_tFarm_qt < 1) then {  
                     _myObject hideObjectGlobal true;
                     deleteVehicle _myObject; 
-                    _myObject setVariable ['hidden_adm',true,true];
+				    _myObject setVariable ['hidden_adm',true,true];
                     _myObject hideObject true;
                     sleep 5;
 
-                    //deleteVehicle _myMemCube;
+                    deleteVehicle _myMemCube;
                     life_action_inUse = false;
                 };
 
             };
-
         };
-    };
+
+    }forEach _nearbyObjects;
 
     life_action_inUse = false;
 };
