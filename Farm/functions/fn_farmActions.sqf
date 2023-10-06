@@ -54,12 +54,12 @@ if !(life_action_inUse) then {
             _message = getText(_resourceCfg >> _objectName >> "message");
             _vItem = getText(_resourceCfg >> _objectName >> "vitem");
 
-            _distance = 2;
+            _distance = 6;
             if (_long_distance isEqualTo 1) then {
                 _distance = 23;
             };
 
-            hint format[">>>%1 / %2 / %3", _myObject, _distCalc, _foundMemFarmCube];
+            //hint format[">>>%1 / %2 / %3", _myObject, _distCalc, _foundMemFarmCube];
 
             if (_distCalc <= _distance) then {            
                 // Si cette arbre n'a pas encore était farm
