@@ -34,4 +34,10 @@ class C33_Client_Core
 		class farmActions {};
 		class farmDetect {};
 	};
+
+	class icon
+	{
+		file = "tontonCasi\Icon\functions";
+		class iconActions {};
+	};
 };

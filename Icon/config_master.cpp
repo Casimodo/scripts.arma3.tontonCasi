@@ -10,37 +10,37 @@
       in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
 */
 
-class tontonCasi_Farm { 
+class tontonCasi_Icon { 
 
 
-    class farmList {
+    class iconList {
         
         // ===============================================
         class cacaotier {
-            vitem           = "cacaoUnprocessed";
-            max_amount      = 8;
-            message         = "Reste %1 fève(s) de cacao sur le cacaotier";
             long_distance   = -1;
+            icon_pos[]      = {0,0,1.5};
+            icon            = "ico_ramasser.paa";
+            msg             = "ramasser";
         };
         class Land_vn_t_cacao_ripe_f : cacaotier {};
         class vn_t_cacao_ripe_f : cacaotier {};
         
         // ===============================================
         class cocotier {
-            vitem           = "cocoUnprocessed";
-            max_amount      = 5;
-            message         = "Reste %1 coco(s) sur le cocotier";
             long_distance   = 1;
+            icon_pos[]      = {0,0,1.5};
+            icon            = "ico_ramasser.paa";
+            msg             = "ramasser";
         };
         class vn_t_cocosnucifera3s_tall_f : cocotier {};
         class vn_t_cocosnucifera2s_small_f : cocotier {};
 
         // ===============================================
         class bananier {
-            vitem           = "banane";
-            max_amount      = 10;
-            message         = "Reste %1 banane(s) sur le bananier";
             long_distance   = -1;
+            icon_pos[]      = {2.6,0,1.5};
+            icon            = "ico_ramasser.paa";
+            msg             = "ramasser";
         };
         class vn_t_banana_slim_f : bananier {};
 

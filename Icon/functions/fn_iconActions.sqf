@@ -11,7 +11,7 @@
       in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
 
     Example:
-    [] call c33_fnc_farmActions;
+    [] call c33_fnc_iconActions;
 */
 
 [] spawn {
@@ -20,9 +20,9 @@
 
     addMissionEventHandler ["draw3D",
     {
-        _iconsPath   = getMissionPath "tontonCasi\Farm\icons";
-        _config      = missionConfigFile >> "tontonCasi_Farm";
-        _resourceCfg = _config >> "farmList";
+        _iconsPath   = getMissionPath "tontonCasi\Icon\icons";
+        _config      = missionConfigFile >> "tontonCasi_Icon";
+        _resourceCfg = _config >> "iconList";
 
         // Obtenir la position du joueur
         _playerPos      = getPos player;

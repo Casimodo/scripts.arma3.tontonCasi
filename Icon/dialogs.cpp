@@ -1,5 +1,5 @@
 /*
-    file : dialog_master.cpp
+    file : dialogs.cpp
 
     Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
     Licence : MIT
@@ -10,7 +10,4 @@
       in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
 */
 
-#include "Panneau\dialogs.cpp"
-#include "Peche\dialogs.cpp"
-#include "Farm\dialogs.cpp"
-#include "Icon\dialogs.cpp"
+#include "config_master.cpp"
