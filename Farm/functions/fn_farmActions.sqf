@@ -106,12 +106,14 @@ if !(life_action_inUse) then {
 
                 // si plus sur l'arbre destruction de celui-ci
                 if (_tFarm_qt < 1) then {  
+                    _myObject setDamage 1;
+                    sleep 1;
                     _myObject hideObjectGlobal true;
                     deleteVehicle _myObject; 
                     _myObject setVariable ['hidden_adm',true,true];
                     _myObject hideObject true;
-                    sleep 5;
-
+                    
+                    //sleep 5;
                     //deleteVehicle _myMemCube;
                     life_action_inUse = false;
                 };
