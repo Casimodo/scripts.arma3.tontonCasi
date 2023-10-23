@@ -40,4 +40,11 @@ class C33_Client_Core
 		file = "tontonCasi\Icon\functions";
 		class iconActions {};
 	};
+
+	class vehiclecase
+	{
+		file = "tontonCasi\Vehiclecase\functions";
+		class vehicleCase {};
+		class vehicleCaseRemove {};
+	};
 };
