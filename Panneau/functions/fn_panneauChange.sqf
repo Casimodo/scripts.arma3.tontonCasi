@@ -2,12 +2,12 @@
     file : fn_panneauChange.sqf
 
     Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
-    Licence : MIT
+    Licence : GNU GPLv3
     Source : https://github.com/Casimodo/scripts.arma3.tontonCasi
     Terms of use:
-      This file comes from a source code covered by the MIT license please respect this. 
+      This file comes from a source code covered by the GNU GPLv3 license please respect this. 
       All component files this code is filed, signed and certified with the competent international authority 
-      in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
+      in order to enforce copyright and ensure proof of an GNU GPLv3 license, thank you to respect that.
 */
 
 private["_pClassName", "_panneauList", "_legal", "_vItemPapier", "_panneau", "_config", "_objectName", "_texture", "_path", "_distance", "_playerPos", "_detectCalss", "_nearbyObjects", "_texturesPath", "_textureIndex"];

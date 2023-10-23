@@ -90,4 +90,16 @@ class panneau_papier_sale {
     icon = "";
 };
 ```
-- **Utilisation** : Avoir le vItem dans ses poches et action proche du panneau
+- **Utilisation** : Avoir le vItem dans ses poches et action proche du panneau (touche Action10)
+
+### Farm auto
+- **Version** : 1.0
+- **Status** : OK
+- **Description** : Plus besoins de définir vos farms sur la map plus besoins de l'éditeur et des nombreux fichiers à config tout ce passe dans le fichier de config du mode. Fonctionne pour n'importe qu'elle objet attention détruit l'objet une fois arrivé au max du rammassage (exemple : l'arbre tombe)
+- **Configurations** : Dans le fichier définissez le className de l'abre (si vous avez posé vous même l'arbre) ou le nom de sa 3D si déjà présent sur la map (utilisez la cmd "hint str cursorObject" pour avoir les infos).
+
+### Icon sur Objet
+- **Version** : 1.0
+- **Status** : OK
+- **Description** : Permet d'afficher un icon sur l'arbre ainsi qu'un libéllé, peut servir à plein de chose pour mieux indiquer au joueur ce qu'il faut faire
+- **Configurations** : Dans le fichier définissez le className de l'abre (si vous avez posé vous même l'arbre) ou le nom de sa 3D si déjà présent sur la map (utilisez la cmd "hint str cursorObject" pour avoir les infos).

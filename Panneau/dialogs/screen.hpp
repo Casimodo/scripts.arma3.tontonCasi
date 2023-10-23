@@ -2,7 +2,7 @@
     file : screen.hpp
 
     Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
-    Licence : MIT
+    Licence : GNU GPLv3
     Source : https://github.com/Casimodo/scripts.arma3.tontonCasi
     Terms of use:
       This file comes from a source code covered by the MIT license please respect this. 
