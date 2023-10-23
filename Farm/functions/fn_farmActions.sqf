@@ -47,7 +47,7 @@ if !(life_action_inUse) then {
         
         if (isClass (_resourceCfg >> _objectName)) then {
                 
-            _foundMemFarmCube = nearestObjects [position player, ["Land_VR_Shape_01_cube_1m_F"], 3];
+            _foundMemFarmCube = nearestObjects [position player, ["Land_VR_Shape_01_cube_1m_F"], 4];
 
             _max_amount = getNumber(_resourceCfg >> _objectName >> "max_amount");
             _long_distance = getNumber(_resourceCfg >> _objectName >> "long_distance");
@@ -66,9 +66,9 @@ if !(life_action_inUse) then {
                 if (count _foundMemFarmCube isEqualTo 0) then {
                     
                     // Créer le cube et lui mettre les infos
-                    //_myMemCube = "Land_VR_Shape_01_cube_1m_F" createVehicle _objPos;
+                    //_myMemCube = createVehicle ["Land_VR_Shape_01_cube_1m_F", [_objPos # 0, _objPos # 1, ((getPos player) # 2)], [], 0, "CAN_COLLIDE"];
                     _myMemCube = createVehicle ["Land_VR_Shape_01_cube_1m_F", [_objPos # 0, _objPos # 1, ((getPos player) # 2) - 1.5], [], 0, "CAN_COLLIDE"];
-                    //_myMemCube hideObject true;
+                    _myMemCube hideObject true;
                     _tFarm_qt = _max_amount;
                     sleep 0.1;
                 } else {
@@ -107,8 +107,11 @@ if !(life_action_inUse) then {
                 // si plus sur l'arbre destruction de celui-ci
                 if (_tFarm_qt < 1) then {  
                     _myObject setDamage 1;
+                    [_myObject, 1] remoteExec ["setDamage", 2];
                     sleep 1;
                     _myObject hideObjectGlobal true;
+                    [_myObject, true] remoteExec ["hideObjectGlobal", 2];
+                    [_myObject, true] remoteExec ["deleteVehicle", 2];
                     deleteVehicle _myObject; 
                     _myObject setVariable ['hidden_adm',true,true];
                     _myObject hideObject true;

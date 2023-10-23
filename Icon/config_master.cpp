@@ -22,8 +22,8 @@ class tontonCasi_Icon {
             icon            = "ico_ramasser.paa";
             msg             = "ramasser";
         };
-        class Land_vn_t_cacao_ripe_f : cacaotier {};
         class vn_t_cacao_ripe_f : cacaotier {};
+        class Land_vn_t_cacao_ripe_f : cacaotier {};
         
         // ===============================================
         class cocotier {
@@ -33,17 +33,23 @@ class tontonCasi_Icon {
             msg             = "ramasser";
         };
         class vn_t_cocosnucifera3s_tall_f : cocotier {};
+        class Land_vn_t_cocosnucifera3s_tall_f : cocotier {};
         class vn_t_cocosnucifera2s_small_f : cocotier {};
+        class Land_vn_t_cocosnucifera2s_small_f : cocotier {};
 
         // ===============================================
         class bananier {
             long_distance   = -1;
-            icon_pos[]      = {2.6,0,1.5};
+            icon_pos[]      = {0.9,0,1.5};
             icon            = "ico_ramasser.paa";
             msg             = "ramasser";
         };
         class vn_t_banana_slim_f : bananier {};
+        class Land_vn_t_banana_slim_f : bananier {};
         class vn_t_banana_f : bananier {};
+        class Land_vn_t_banana_f : bananier {};
+        class vn_t_banana_wild_f : bananier {};
+        class Land_vn_t_banana_wild_f : bananier {};
 
     };
 

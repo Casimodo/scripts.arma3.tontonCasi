@@ -58,6 +58,7 @@
                     
                     _iconPos = [_objPos # 0, _objPos # 1, _playerPos # 2] vectorAdd _icon_pos;
                     //hint format[">>>Player : %1 / icon: %2", _playerPos, _iconPos];
+                    //hint format[">>> %1 / %2 / [%3,%4,%5]", cursorObject, _objPos, (_playerPos # 0 - _objPos # 0), (_playerPos # 1 - _objPos # 1), (_playerPos # 2 - _objPos # 2)];
                     drawIcon3D
                     [
                         format ["%1\%2", _iconsPath, _icon],

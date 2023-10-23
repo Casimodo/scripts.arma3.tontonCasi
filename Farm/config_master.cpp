@@ -22,8 +22,8 @@ class tontonCasi_Farm {
             message         = "Reste %1 fève(s) de cacao sur le cacaotier";
             long_distance   = -1;
         };
-        class Land_vn_t_cacao_ripe_f : cacaotier {};
         class vn_t_cacao_ripe_f : cacaotier {};
+        class Land_vn_t_cacao_ripe_f : cacaotier {};
         
         // ===============================================
         class cocotier {
@@ -33,7 +33,9 @@ class tontonCasi_Farm {
             long_distance   = 1;
         };
         class vn_t_cocosnucifera3s_tall_f : cocotier {};
+        class Land_vn_t_cocosnucifera3s_tall_f : cocotier {};
         class vn_t_cocosnucifera2s_small_f : cocotier {};
+        class Land_vn_t_cocosnucifera2s_small_f : cocotier {};
 
         // ===============================================
         class bananier {
@@ -43,7 +45,11 @@ class tontonCasi_Farm {
             long_distance   = -1;
         };
         class vn_t_banana_slim_f : bananier {};
+        class Land_vn_t_banana_slim_f : bananier {};
         class vn_t_banana_f : bananier {};
+        class Land_vn_t_banana_f : bananier {};
+        class vn_t_banana_wild_f : bananier {};
+        class Land_vn_t_banana_wild_f : bananier {};
 
     };
 
