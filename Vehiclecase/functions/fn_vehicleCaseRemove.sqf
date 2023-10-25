@@ -15,9 +15,7 @@
 */
 private["_veh"];
 
-_veh 		= param [0,objNull,[objNull]];
-
+_veh 				= [_this,0,objNull,[objNull]] call BIS_fnc_param;
 {   
-	deleteVehicle _x;
-	[_x, true] remoteExec ["deleteVehicle", 2];       
+	deleteVehicle _x; 
 } forEach attachedObjects _veh;  
