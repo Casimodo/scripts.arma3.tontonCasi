@@ -13,7 +13,7 @@
 		[_veh] call c33_fnc_vehicleCase;
 
 */
-private["_veh", "_config", "_vehicle_list", "_data", "_veh_data", "_charge", "_max_charge", "_case_type", "_case_posi", "_max_case", "_coef_case", "_total_case", "_vehiclecase_number"];
+private["_veh", "_config", "_vehicle_list", "_data", "_veh_data", "_charge", "_max_charge", "_case_type", "_case_posi", "_max_case", "_coef_case", "_total_case", "_vehiclecase_number", "_galerieClass", "_galeriePosi"];
 
 _config      	= missionConfigFile >> "tontonCasi_Vehiclecase";
 _vehicle_list 	= _config >> "vehicle_list";
@@ -29,8 +29,18 @@ _vehiclecase_number = _veh getVariable ["vehiclecase_number", 0];
 
 if (isClass (_vehicle_list >> typeOf _veh)) then {
 
-	_case_type 	= getText(_vehicle_list >> typeOf _veh >> "case");
-	_case_posi 	= getArray(_vehicle_list >> typeOf _veh >> "position");
+	_case_type 		= getText(_vehicle_list >> typeOf _veh >> "case");
+	_case_posi 		= getArray(_vehicle_list >> typeOf _veh >> "position");
+	_galerieClass 	= getText(_vehicle_list >> typeOf _veh >> "galerieClass");
+
+	// Si le véhicules doit avoir une galerie
+	if !(_galerieClass isEqualTo "") then {
+		_galeriePosi 	= getArray(_vehicle_list >> typeOf _veh >> "galeriePosi");
+		_newObject 		= createVehicle [_galerieClass, [(getPos player) # 0, (getPos player) # 1, ((getPos player) # 2) - 5], [], 0, "CAN_COLLIDE"]; 
+		_newObject attachTo [_veh , _galeriePosi];
+	};
+
+	// Après ont s'occupe des sacs
 	_max_case 	= count _case_posi;
 
 	_coef_case 	= _max_case / _max_charge;
@@ -39,7 +49,7 @@ if (isClass (_vehicle_list >> typeOf _veh)) then {
 	if (_total_case < 1) then {
 		_total_case = 0;
 	};
-
+	_total_case = 3;
 	if (_total_case <= _max_case) then {
 		_case_posi resize _total_case;
 	};
@@ -49,8 +59,9 @@ if (isClass (_vehicle_list >> typeOf _veh)) then {
 		_veh setVariable ["vehiclecase_number", _total_case];
 
 		{   
-			deleteVehicle _x;      
-			//[_myObject, true] remoteExec ["deleteVehicle", 2]; 
+			if (typeOf _x isEqualTo _case_type) then {
+				deleteVehicle _x;      
+			};
 		} forEach attachedObjects _veh;  
 
 		if (_total_case > 0) then {

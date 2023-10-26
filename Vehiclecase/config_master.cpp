@@ -24,7 +24,7 @@ Pour trouver les positions utiliser le code ci-dessous
   } forEach attachedObjects _vehicule;  
 } forEach nearestObjects [player, ["Car"], 15];  
   
-_pos = [[0.0175781,-0.0332031,2.15171],[-0.0341797,-0.900391,2.14768],[-0.0234375,-0.0390625,1.37259],[-0.0361328,-0.708008,1.40164]];   
+_pos = [[0.0234375,-0.27832,1.42702]];   
 {   
   _newObject = createVehicle ["Land_FoodSacks_01_small_brown_F", (getPos player), [], 0, "CAN_COLLIDE"]; 
   _newObject attachTo [cursorTarget , _x];  
@@ -74,6 +74,15 @@ class tontonCasi_Vehiclecase {
             position[] = {
                 {0.0175781,-0.0332031,-0.5},{-0.0341797,-0.900391,-0.5},{-0.0234375,-0.0390625,-0.15},{-0.0361328,-0.708008,-0.15} 
             };
+        };
+
+        class vn_c_car_03_01 {
+            case = "vn_prop_sandbag_02";
+            position[] = {
+                {0.0,0.04,0.15}, {0.0,-0.56,0.15}, {0.0,-0.25,0.22}, {0.0,0.00,0.25}, {0.0,-0.52,0.23}
+            };
+            galerieClass = "C33_furniture_galerie_voiture"
+            galeriePosi[] = {0.0234375,-0.27832,0.27};
         };
 
     };
