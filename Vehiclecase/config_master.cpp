@@ -26,7 +26,7 @@ Pour trouver les positions utiliser le code ci-dessous
 
 _pos = [[-0.0244141,-0.509766,0.719577],[-0.0253906,-1.12598,0.751082],[-0.267578,-0.506836,-0.149244],[-0.22168,-1.27344,-0.201047],[-0.0244141,-1.70996,0.72972]];
 {   
-  _newObject = createVehicle ["vn_prop_sandbag_02", (getPos player), [], 0, "CAN_COLLIDE"]; 
+  _newObject = createVehicle ["Land_FoodSacks_01_small_brown_F", (getPos player), [], 0, "CAN_COLLIDE"]; 
   _newObject attachTo [cursorTarget , _x];  
 } forEach _pos;
 
@@ -81,7 +81,7 @@ class tontonCasi_Vehiclecase {
             position[] = {
                 {0.0,0.04,0.15}, {0.0,-0.56,0.15}, {0.0,-0.25,0.22}, {0.0,0.00,0.25}, {0.0,-0.52,0.23}
             };
-            galerieClass = "C33_furniture_galerie_voiture"
+            galerieClass = "C33_furniture_galerie_voiture";
             galeriePosi[] = {0.0234375,-0.27832,0.27};
         };
 
@@ -90,14 +90,14 @@ class tontonCasi_Vehiclecase {
             position[] = {
                 {0.0,0.04,0.32}, {0.0,-0.56,0.32}, {0.0,-0.25,0.39}, {0.0,0.00,0.42}, {0.0,-0.52,0.45}
             };
-            galerieClass = "C33_furniture_galerie_voiture"
+            galerieClass = "C33_furniture_galerie_voiture";
             galeriePosi[] = {0.0458984,-0.194336,0.45};
         };
 
         class vn_b_wheeled_lr2a_01_aus_army {
             case = "Land_FoodSacks_01_small_brown_F";
             position[] = {
-                {0.0,0.04,0.32}, {0.0,-0.56,0.32}, {0.0,-0.25,0.39}, {0.0,0.00,0.42}, {0.0,-0.52,0.45}
+                {-0.0244141,-0.509766,-0.63},{-0.0253906,-1.12598,-0.63},{-0.0244141,-1.65,-0.63},{-0.267578,-0.506836,-0.25},{-0.22168,-1.27344,-0.25}
             };
         };
 

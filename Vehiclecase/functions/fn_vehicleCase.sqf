@@ -13,7 +13,7 @@
 		[_veh] call c33_fnc_vehicleCase;
 
 */
-private["_veh", "_config", "_vehicle_list", "_data", "_veh_data", "_charge", "_max_charge", "_case_type", "_case_posi", "_max_case", "_coef_case", "_total_case", "_vehiclecase_number", "_galerieClass", "_galeriePosi"];
+private["_veh", "_config", "_vehicle_list", "_data", "_veh_data", "_charge", "_max_charge", "_case_type", "_case_posi", "_max_case", "_coef_case", "_total_case", "_vehiclecase_number", "_galerieClass", "_galeriePosi", "_action_vehicules"];
 
 _config      	= missionConfigFile >> "tontonCasi_Vehiclecase";
 _vehicle_list 	= _config >> "vehicle_list";
@@ -75,6 +75,12 @@ if (isClass (_vehicle_list >> typeOf _veh)) then {
 };
 
 // Permet d'enlever des éléments sur certain véhicules
+_action_vehicules = _veh getVariable ["add_action_vehicule", false];
+
+if (_action_vehicules) exitWith {}; // N'ajoute pas les actions si déjà présent
+
+_veh setVariable ["add_action_vehicule", true];
+
 _sogCar = ["vn_c_car_04_01"];
 if ((typeOf _veh) in _sogCar) then {    
 	_veh animate ["clutter_c_hide", 1];
@@ -104,7 +110,7 @@ if ((typeOf _veh) in _sogCar) then {
 		};
 	},"",0,false,false,"",'true'];
 
-	_veh addAction ["<t color='#FF6600'>Pele</t>", { 
+	_veh addAction ["<t color='#FF6600'>Pelle</t>", { 
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		_anni = _target animationPhase "hide_shovel";
 		if (_anni isEqualTo 0) then {
@@ -159,7 +165,7 @@ if ((typeOf _veh) in _sogCar) then {
 		};
 	},"",0,false,false,"",'true'];
 
-	_veh addAction ["<t color='#FF6600'>Pele</t>", { 
+	_veh addAction ["<t color='#FF6600'>Pelle</t>", { 
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		_anni = _target animationPhase "user_shovel_hide";
 		if (_anni isEqualTo 0) then {
