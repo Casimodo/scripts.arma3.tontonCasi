@@ -49,7 +49,7 @@ if (isClass (_vehicle_list >> typeOf _veh)) then {
 	if (_total_case < 1) then {
 		_total_case = 0;
 	};
-	_total_case = 3;
+	
 	if (_total_case <= _max_case) then {
 		_case_posi resize _total_case;
 	};
@@ -76,7 +76,97 @@ if (isClass (_vehicle_list >> typeOf _veh)) then {
 
 // Permet d'enlever des éléments sur certain véhicules
 _sogCar = ["vn_c_car_04_01"];
+if ((typeOf _veh) in _sogCar) then {    
+	_veh animate ["clutter_c_hide", 1];
+	_veh animate ["canopy_hide", 1];
+};
+
+_sogCar = ["vn_b_wheeled_lr2a_01_aus_army"];
+if ((typeOf _veh) in _sogCar) then {    
+	
+	_veh addAction ["<t color='#FF6600'>Roue secours</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "hide_sparewheel";
+		if (_anni isEqualTo 0) then {
+			_target animate ["hide_sparewheel", 1];
+		} else {
+			_target animate ["hide_sparewheel", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Hache</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "hide_axe";
+		if (_anni isEqualTo 0) then {
+			_target animate ["hide_axe", 1];
+		} else {
+			_target animate ["hide_axe", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Pele</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "hide_shovel";
+		if (_anni isEqualTo 0) then {
+			_target animate ["hide_shovel", 1];
+		} else {
+			_target animate ["hide_shovel", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+};
+
+_sogCar = ["vn_c_wheeled_m151_01", "vn_c_wheeled_m151_02"];
 if ((typeOf _veh) in _sogCar) then {
-    _veh animate ["canopy_hide", 1];
-    _veh animate ["clutter_c_hide", 1];
+
+	_veh addAction ["<t color='#FF6600'>Capote</t>", {
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "user_canopy_hide";
+		if (_anni isEqualTo 0) then {
+			_target animate ["user_canopy_hide", 1];
+		} else {
+			_target animate ["user_canopy_hide", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Roue secours</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "user_sparewheel_hide";
+		if (_anni isEqualTo 0) then {
+			_target animate ["user_sparewheel_hide", 1];
+		} else {
+			_target animate ["user_sparewheel_hide", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Jerrican</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "user_refuel_can_hide";
+		if (_anni isEqualTo 0) then {
+			_target animate ["user_refuel_can_hide", 1];
+		} else {
+			_target animate ["user_refuel_can_hide", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Hache</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "user_axe_hide";
+		if (_anni isEqualTo 0) then {
+			_target animate ["user_axe_hide", 1];
+		} else {
+			_target animate ["user_axe_hide", 0];
+		};
+	},"",0,false,false,"",'true'];
+
+	_veh addAction ["<t color='#FF6600'>Pele</t>", { 
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_anni = _target animationPhase "user_shovel_hide";
+		if (_anni isEqualTo 0) then {
+			_target animate ["user_shovel_hide", 1];
+		} else {
+			_target animate ["user_shovel_hide", 0];
+		};
+	},"",0,false,false,"",'true'];
+
 };
