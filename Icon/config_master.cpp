@@ -29,8 +29,8 @@ class tontonCasi_Icon {
         class cocotier {
             long_distance   = 1;
             icon_pos[]      = {0,0,1.5};
-            icon            = "ico_ramasser.paa";
-            msg             = "ramasser";
+            icon            = "ico_machette.paa";
+            msg             = "couper";
         };
         class vn_t_cocosnucifera3s_tall_f : cocotier {};
         class Land_vn_t_cocosnucifera3s_tall_f : cocotier {};
@@ -55,8 +55,8 @@ class tontonCasi_Icon {
         class troncPin {
             long_distance   = 1;
             icon_pos[]      = {0,0,1.6};
-            icon            = "ico_ramasser.paa";
-            msg             = "ramasser";
+            icon            = "ico_hache.paa";
+            msg             = "couper";
         };
         class vn_t_palaquium_f : troncPin {};
         class Land_vn_t_palaquium_f : troncPin {};
@@ -64,10 +64,9 @@ class tontonCasi_Icon {
         class troncPin2 {
             long_distance   = 1;
             icon_pos[]      = {0,0,0.8};
-            icon            = "ico_ramasser.paa";
-            msg             = "ramasser";
+            icon            = "ico_hache.paa";
+            msg             = "couper";
         };
-        class vn_t_palaquium_f : troncPin2 {};
         class vn_d_fallenbranch_lc_f : troncPin2 {};
         class Land_vn_d_fallenbranch_lc_f : troncPin2 {};
         class vn_d_fallentrunk_branches_lc_f : troncPin2 {};

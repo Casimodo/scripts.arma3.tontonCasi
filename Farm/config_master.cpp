@@ -70,7 +70,7 @@ class tontonCasi_Farm {
             message         = "Reste %1 tronc(s) sur le Pin";
             long_distance   = 1;
             animate         = "Swing_Axe";
-            requiredTools   = "Axe"; // vn_m_axe_01
+            requiredTools   = "vn_m_axe_01";
             requiredMsg     = "Vous devez utiliser une hache";
             sounds[]        = {"axe_sound_1","axe_sound_2","axe_sound_3"};
         };
