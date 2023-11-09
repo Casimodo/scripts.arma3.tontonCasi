@@ -51,6 +51,31 @@ class tontonCasi_Icon {
         class vn_t_banana_wild_f : bananier {};
         class Land_vn_t_banana_wild_f : bananier {};
 
+        // ===============================================
+        class troncPin {
+            long_distance   = 1;
+            icon_pos[]      = {0,0,1.6};
+            icon            = "ico_ramasser.paa";
+            msg             = "ramasser";
+        };
+        class vn_t_palaquium_f : troncPin {};
+        class Land_vn_t_palaquium_f : troncPin {};
+
+        class troncPin2 {
+            long_distance   = 1;
+            icon_pos[]      = {0,0,0.8};
+            icon            = "ico_ramasser.paa";
+            msg             = "ramasser";
+        };
+        class vn_t_palaquium_f : troncPin2 {};
+        class vn_d_fallenbranch_lc_f : troncPin2 {};
+        class Land_vn_d_fallenbranch_lc_f : troncPin2 {};
+        class vn_d_fallentrunk_branches_lc_f : troncPin2 {};
+        class Land_vn_d_fallentrunk_branches_lc_f : troncPin2 {};
+        class vn_d_fallentrunk_roots_lc_f : troncPin2 {};
+        class Land_vn_d_fallentrunk_roots_lc_f : troncPin2 {};
+
+
     };
 
 };  
