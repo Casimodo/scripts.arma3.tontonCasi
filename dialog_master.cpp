@@ -9,10 +9,11 @@
       All component files this code is filed, signed and certified with the competent international authority 
       in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
 */
-
+#include "common.hpp"
 #include "Panneau\dialogs.cpp"
 #include "Peche\dialogs.cpp"
 #include "Farm\dialogs.cpp"
 #include "Icon\dialogs.cpp"
 #include "Vehiclecase\dialogs.cpp"
 #include "Hud\dialogs.cpp"
+

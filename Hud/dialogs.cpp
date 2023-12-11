@@ -11,10 +11,3 @@
 */
 
 //#include "config_master.cpp"
-
-g_blood   = 100;
-g_fatigue = 100;
-g_hunger  = 100;
-g_thirst  = 100;
-g_mic     = 100;
-g_bag     = 100;
