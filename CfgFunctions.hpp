@@ -47,4 +47,10 @@ class C33_Client_Core
 		class vehicleCase {};
 		class vehicleCaseRemove {};
 	};
+
+	class hud
+	{
+		file = "tontonCasi\Hud\functions";
+		class hudActions {};
+	};
 };

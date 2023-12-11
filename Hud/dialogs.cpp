@@ -1,5 +1,5 @@
 /*
-    file : dialog_master.cpp
+    file : dialogs.cpp
 
     Author: tontonCasi [Twitch : https://www.twitch.tv/tontoncasi]
     Licence : GNU GPLv3
@@ -10,9 +10,11 @@
       in order to enforce copyright and ensure proof of an MIT license, thank you to respect that.
 */
 
-#include "Panneau\dialogs.cpp"
-#include "Peche\dialogs.cpp"
-#include "Farm\dialogs.cpp"
-#include "Icon\dialogs.cpp"
-#include "Vehiclecase\dialogs.cpp"
-#include "Hud\dialogs.cpp"
+//#include "config_master.cpp"
+
+g_blood   = 100;
+g_fatigue = 100;
+g_hunger  = 100;
+g_thirst  = 100;
+g_mic     = 100;
+g_bag     = 100;
